@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int countStudents(vector<int>& students, vector<int>& sandwiches) {
+       int i = 0, j = 0;
+        while (i < students.size()) {
+            if (students[i] == sandwiches[0]) {
+                students.erase(students.begin() + i);
+                sandwiches.erase(sandwiches.begin());
+                i = 0;
+            } else {
+                i++;
+            }
+        }
+        return students.size();
+
+    }
+};
